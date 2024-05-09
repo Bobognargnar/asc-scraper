@@ -51,7 +51,7 @@ class ScraperASC():
             print("Login failed!")
     
     def load_athletes(self):
-        """Load atheletes 
+        """Load athletes 
         """
         response = requests.post(self.urls["athletes"], headers=self.headers, json = {"year": "2024"})
         if response.status_code == 200:
@@ -60,7 +60,7 @@ class ScraperASC():
                 print(f'{athlete["firstname"]} {athlete["lastname"]} {athlete["cardCode"]}')
                 self.athletes.append(athlete)
         else:
-            print("Failed loading ASD athetes")
+            print("Failed loading ASD athletes")
 
     def dump_cards(self):
         for ath in self.athletes:
